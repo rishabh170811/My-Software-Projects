@@ -1,0 +1,83 @@
+<html>
+<head>
+
+<title>Virtual Library</title>
+
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="default.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+function validateForm()
+    {
+    var a=document.forms["signinf"]["username"].value;
+    var b=document.forms["signinf"]["password"].value;
+
+    if ((a==null || a=="") && (b==null || b==""))
+    {
+    alert("Username and Password must be filled!");
+    return false;
+    }
+    
+    if (a==null || a=="")
+    {
+    alert("Username must be filled!");
+    return false;
+    }
+    
+    if (b==null || b=="")
+    {
+    alert("Password must be filled!");
+    return false;
+    }
+    }
+    
+</script>
+</head>
+
+<body onload="document.signinf.username.focus()">
+<div id="header">
+	<h1>Virtual Library</h1>
+	<h2>Learning made simple</h2>
+    
+    <p style="color:black;font-size:11.5px" align="right">
+    <a href="signup.htm" style='color:black;'>Sign Up</a>&nbsp;&nbsp;|
+    <a href="signin.htm" style='color:black;'>Sign In</a>&nbsp;&nbsp;|
+	</p>
+	
+</div>
+
+<div id="menu">
+	<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="aboutus.php">About Us</a></li>		
+		<li><a href="contactus.php">Contact Us</a></li>
+	</ul>
+</div>
+
+<div id="content">
+
+<h3 style="color:black;font-weight:bold;font-size:20px;">Please, enter your credentials! </h3>
+
+<form name="signinf" method="post" action="signin.php">
+
+<h5>Username:
+<input type=text name="username" size=30>
+
+<h5>Password:
+<input type=password name="password" size=30></br></br>
+
+<input type=submit style="color:blue;font-weight:bold" name=s1 value=" Login " onclick="return validateForm()"><br><br>
+
+&nbsp;<a href="forgot.htm" style="font-weight:bold;font-size:17px;color:green">Forgot Password?</a>
+
+</form>
+</div></br></br></br></br></br></br></br></br>
+
+<div id="footer">
+	<p>Copyright &copy; Murali Kembhavi and Rishabh Sharma </p>
+</div>
+
+</body>
+</html>

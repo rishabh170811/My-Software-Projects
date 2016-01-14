@@ -1,0 +1,31 @@
+
+Users of Virtual Library:
+
+1. Students
+
+	a. Username: tanny
+	   Password: tanny
+
+	b. Username: niketh
+	   Password: niketh
+
+2. Author
+
+	a. Username: jhj
+	   Password: jjjj
+
+3. Content Manager
+
+	a. Username: muralik
+	   Password: muralik
+
+4. Admin
+
+	a. Username: sharma
+	   Password: sharma	
+
+MySql Hostname: localhost, Username: root, Password: murali=1256, Database_name: library
+
+Go to page -> localhost/index.php for starting the website and then login with above credentials!!
+
+Name of DDL Script file: database_library.sql
