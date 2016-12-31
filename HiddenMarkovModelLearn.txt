@@ -49,32 +49,6 @@ def hmmtrain():
                 dictoftags[t1] = dictoftags.get(t1, 0) + 1
                 dictbiggram[prev, t1] = dictbiggram.get((prev, t1), 0) + 1
                 prev = t1
-                # if i==listwords.__len__()-1:
-                #     splitinfo=listwords[i]
-                #     if posbigram[0] is 0:
-                #         posbigram[0] =splitinfo
-                #     else:
-                #         if posbigram[1]==0:
-                #             posbigram[1]=splitinfo
-                #         else:
-                #             posbigram[0]=posbigram[1]
-                #             posbigram[1]=splitinfo
-                #     #if dictbiggram[posbigram[0]].get(posbigram[1]) is None:
-                #     dictbiggram[posbigram[0],posbigram[1]]=dictbiggram.get((posbigram[0],posbigram[1]),0)+1
-                #     dictoftags[splitinfo]=dictoftags.get(splitinfo,0)+1
-                #     if splitinfo not in listoftags:
-                #         listoftags.append(splitinfo)
-                #   #  if splitinfo not in listoftags:
-                #    #     listoftags.append(splitinfo)
-                # else:
-                #     if i is not listwords.__len__()-2:
-                #                 finword+=listwords[i]+"/"
-                #     else:
-                #         finword+=listwords[i]
-                #       #  if finword not in listofwords:
-                #        #     listofwords.append(finword)
-                #         #if dict1[finword].get(splitinfo) is None:
-                # dict1[finword,splitinfo]=dict1.get((finword,splitinfo),0)+1
         if prev!='':
             dictbiggram[posbigram[1],"End"]=dictbiggram.get((posbigram[1],"End"),0)+1
     for key,values in dictbiggram.items():
@@ -90,15 +64,6 @@ def hmmtrain():
     pickle.dump(dictprobtags, file2)
     pickle.dump(dictprobwords,file2)
     pickle.dump(listoftags,file2)
-    # for key, values in dictprobtags.items():
-    #     file2.write(str(key[0])+" "+str(key[1])+" "+str(values)+"\n")
-    # file2.write('* * *\n')
-    # # for key, values in dictprobwords.items():
-    #     file2.write(str(key[0]) + " " + str(key[1]) + " " + str(values) + "\n")
-            #else:
-                         #   dict1[finword][splitinfo]+= 1
-
-            #i got word and the part of speech
     '''
     for word in listofwords:
         for key,values in dict1[word].items():

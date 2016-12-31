@@ -28,49 +28,12 @@ def hmmdecode():
     f1=sys.argv[1]
     file2=open(f1,'r')
     file3 = open("hmmoutput.txt", 'w')
-    # i=0
-    # for line in readr.split("\n"):
-    #     if line=="* * *" and i==0:
-    #         i=1
-    #     else:
-    #         if i==0:
-    #             word=line.split(" ")
-    #            # print word.__len__()
-    #             if word.__len__()==3:
-    #                 if word[0] in a:
-    #                     a[word[0]][word[1]]=(float)(word[2])
-    #                 else:
-    #                     a[word[0]] = {}
-    #                     a[word[0]][word[1]] = (float)(word[2])
-    #
-    #                 if word[0] not in states:
-    #                     states.append(word[0])
-    #                 if word[1] not in states:
-    #                     states.append(word[1])
-    #         if i==1:
-    #             word=line.split(" ")
-    #             if word.__len__()==3 and word[2]!='*':
-    #                 if word[0] in b:
-    #                     b[word[0]][word[1]] = (float)(word[2])
-    #                 else:
-    #                     b[word[0]] = {}
-    #                     b[word[0]][word[1]] = (float)(word[2])
-    #     #stored transition probabilities in dictionary
-   # viterbi=[[0 for x in range(states.__len__())]for x in range(observation.length())
     if '' in states:
         states.remove('')
-#    states.remove('0')
-#    print states
-    #for i in range(0,states.__len__()):
-     #   b['Stop',states[i]]=0.00000000001
-
 
     sentences=file2.read()
     c=0
     for sent in sentences.split("\n"):
-        # if c==1:
-        #     break
-        # c=c+1
         # sent = "A part de l' Hostalnou_de_Bianya , Llocalou , i la Vall_de_el_Bac , el municipi comprèn , a més , el poble de Capsec , que fins el 1917 donà nom a el municipi , i una sèrie d' antics llocs i parròquies , algunes d' origen romànic , que havien pertangut a els distints monestirs propers ( Riudaura , Camprodon , Sant_Pere_de_Besalú , Sant_Joan_les_Fonts , Sant_Joan_de_les_Abadesses ) : Santa_Margarida_de_Bianya , Sant_Pere_Despuig , Sant_Martí_de_Bianya ( o de Solamal ) i Sant_Martí_de_el_Clot ( o de Tornadissa ) , a la vall de Bianya ; Porreres , Llongarriu , Sant_Feliu_de_el_Bac , Sant_Miquel_de_la_Torre i Santa_Magdalena_de_el_Coll , a la vall de el Bac ; el poble i castell de Castellar_de_la_Muntanya , a la vall de Castellar , i el terme separat de la Canya ."
         sentence=sent.split(" ")
         # print sentence.__len__()
@@ -99,10 +62,6 @@ def hmmdecode():
                 outerstates=b[sentence[t]].keys()
             else:
                 outerstates  = states
-            # if '' in outerstates:
-            #     outerstates.remove('')
-            # if '0' in outerstates:
-            #     outerstates.remove('0')
             for i in outerstates:
                 max=0.0
                 if sentence[t-1] in b and b[sentence[t-1]].keys()>0:
@@ -129,19 +88,6 @@ def hmmdecode():
                             max=viterbi[i,t]
                             beststate=j
                 backpointer[i,t]=beststate
-            #     maxi = 0.0
-            #
-            #     itr1=float(viterbi.get((j, t - 1), 0.000004))
-            #     if j in a:
-            #         itr2=float(a[j].get(i, 0.000004))
-            #     else:
-            #         itr2=0.00004
-            #     for j in innerstates:
-            #         if maxi <= itr1*itr2:
-            #             backpointer[i, t] = j
-            #             maxi=itr1*itr2
-            # # # for j in range(0, states.__len__()):
-            #    backpointer[states[i], t] = max(states[i])  # max of part of speech#..let's see @morning
 
         max=0.0
         best=""
@@ -165,8 +111,6 @@ def hmmdecode():
         backpointer["End",sentence.__len__()]=best
         t=sentence.__len__()
         stateitr="End"
- #       print count
-  #      count=count+1
         localstr=""
         while t>0:
             #print backpointer[stateitr,t]
@@ -180,12 +124,6 @@ def hmmdecode():
             finaloutstr=localstr
         else:
             finaloutstr=finaloutstr+"\n"+localstr
-     #   max=-1000000.0
-      #  for i in range(0,states.__len__()):
-       #     if(float(viterbi.get((states[i], t))>max)):
-        #        max=float(viterbi.get((states[i], t)))
-         #       str=states[i]
-       # print str
     file3.write(finaloutstr)
     print time.clock()-start
 pass
