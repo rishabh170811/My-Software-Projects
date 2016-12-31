@@ -1,5 +1,5 @@
 package mancala;
-/*learning agent here */
+/*learning agent here. */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
