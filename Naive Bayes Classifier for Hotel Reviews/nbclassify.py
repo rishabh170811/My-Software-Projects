@@ -31,11 +31,7 @@ def NaiveBayesClassCompute():
         dict[1][str[0]]=math.log10(float(str[2])/(float(countinfo[2])+float(countinfo[0])))
         dict[2][str[0]]=math.log10(float(str[3])/(float(countinfo[3])+float(countinfo[0])))
         dict[3][str[0]]=math.log10(float(str[4])/(float(countinfo[4])+float(countinfo[0])))
-    #a dictionary has been made
-    #half the task is done
-    #now lets iterate through the directory
-    ####################################################################################33
-    # f stores the location of the directories to be iterated over
+   
     f=[]
     f.append("C:\\Users\\Rishabh\\Desktop\\op_spam_train\\negative_polarity\\deceptive_from_MTurk")
     f.append("C:\\Users\\Rishabh\\Desktop\\op_spam_train\\negative_polarity\\truthful_from_Web")

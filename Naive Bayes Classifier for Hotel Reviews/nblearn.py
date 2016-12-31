@@ -52,7 +52,7 @@ def NaiveBayesClassifier():
 
                             else:
                                 dictlocal[word]=dictlocal.get(word)+1
-                               # print dictlocal
+                               
         word_count.append(count)
         print files_no
         dict[c]=dictlocal
