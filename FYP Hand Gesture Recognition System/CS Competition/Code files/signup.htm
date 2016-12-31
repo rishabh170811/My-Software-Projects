@@ -1,0 +1,125 @@
+<html>
+<head>
+
+<script type="text/javascript">
+    function validateForm()
+    {
+    var a=document.forms["signup"]["fname"].value;
+    var b=document.forms["signup"]["lname"].value;
+    var c=document.forms["signup"]["email"].value;
+    var d=document.forms["signup"]["username"].value;
+    var e=document.forms["signup"]["password"].value;
+    var f=document.forms["signup"]["mobno"].value;
+    var g=document.forms["signup"]["role"].value;
+    
+    if ((a==null || a=="") && (b==null || b=="") && (c==null || c=="") && (d==null || d=="") && (e==null || e=="") && (f==null || f==""))
+    {
+    alert("All the Fields must be filled!");
+    return false;
+    }
+
+    if (a==null || a=="")
+    {
+    alert("First name must be filled!");
+    return false;
+    }
+    
+    if (b==null || b=="")
+    {
+    alert("Last name must be filled!");
+    return false;
+    }
+
+    if (c==null || c=="")
+    {
+    alert("Email ID must be filled!");
+    return false;
+    }
+       
+    if (d==null || d=="")
+    {
+    alert("Username must be filled!");
+    return false;
+    }
+
+    if (e==null || e=="")
+    {
+    alert("Password must be filled!");
+    return false;
+    }
+
+    if (f==null || f=="")
+    {
+    alert("Mobile No. must be filled!");
+    return false;
+    }
+    
+    }
+    </script>
+
+<title>Virtual Library</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body onload="document.signup.fname.focus()">
+<div id="header">
+	<h1>Virtual Library</h1>
+    <h2>Learning made simple</h2>
+    <p style="color:black;font-size:11.5px" align="right">
+    <a href="signup.htm" style='color:black;'>Sign Up</a>&nbsp;&nbsp;|
+    <a href="signin.htm" style='color:black;'>Sign In</a>&nbsp;&nbsp;|
+    </p>
+    
+</div>
+<div id="menu">
+	<ul>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="aboutus.php">About Us</a></li>		
+		<li><a href="contactus.php">Contact Us</a></li>
+	</ul>
+</div>
+<div id="content">
+<h3 style="color:black;font-weight:bold;font-size:20px;">Please fill this form to Register:</h3>
+
+<form name="signup" method="post" action="signup.php" >
+
+<h5>First Name:
+<input type=text name="fname" size=30></input>
+
+<h5>Last Name:
+<input type=text name="lname" size=30>
+
+<h5>Email ID:&nbsp;&nbsp;&nbsp;&nbsp;
+<input type=text name="email" size=30>
+
+<h5>Username:
+<input type=text name="username" size=30>
+
+<h5>Password:
+<input type=password name="password" size=30>
+
+<h5>Mobile No.:
+<input type=text name="mobno" size=30>
+
+<h5>Role:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="role">
+    <option value="1">Students</option>
+    <option value="2">Author</option>
+    <option value="3">Content Manager</option>
+</select></br></br>
+
+<input type=submit style="color:blue;font-weight:bold" name="submitb" value="Register" onclick="return validateForm()" /></br>
+<b> *All the fields are required </b>
+
+</form>
+</div>
+
+<div id="footer">
+	<p>Copyright &copy; Murali Kembhavi and Rishabh Sharma</p>
+</div>
+
+</body>
+</html>
