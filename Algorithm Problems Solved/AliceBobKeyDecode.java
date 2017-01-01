@@ -4,7 +4,7 @@ public class AliceBobKeyDecode {
 	/*
 	 * Complete the function below.
 	 */
-	// the key found is 8251220 8...
+	// the key found is 8251220 8..
 	    static String decrypt(String encrypted_message) {
 	        if(encrypted_message.isEmpty())
 	            return null;
